@@ -1,0 +1,20 @@
+{
+  "name": "bears",
+  "description": "",
+  "main": "main.js",
+  "authors": [
+    "Suthon <suthon@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ssuthon/bears",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.3"
+  }
+}
