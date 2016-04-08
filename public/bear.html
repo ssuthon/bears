@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 	<title>Bear App</title>
+	<script type="text/javascript" src="lib/angular/angular.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
+<body ng-controller="myCtrl">
+
+Name: <input type="text" ng-model="bear.name"/>
+Power: <input type="number" ng-model="bear.power">
+<button ng-click="addBear()" class="btn">Add</button>
 
 </body>
+<script type="text/javascript">
+	var app = angular.module("myApp", [])
+	.controller("myCtrl", function($scope, $http){
+		$scope.bear = {};
+		$scope.addBear = function(){
+			$http.post("/api/bears", $scope.bear). 
+        	success(function(data){ 
+          	console.log(data.message); 
+          	$scope.bear = {}; 
+        	}); 
+		}
+	})
+
+</script>
 </html>

@@ -9,9 +9,7 @@ var bears = [];
   
 router.route('/bears') 
   .post(function(req, res) { 
-    var bear = {}; 
-    bear.name = req.body.name; 
-    bears.push(bear); 
+    bears.push(req.body); 
     res.json({ message: 'Bear created!' }); 
   })
   .get(function(req, res){
